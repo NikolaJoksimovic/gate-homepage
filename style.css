@@ -25,7 +25,6 @@ body{
     width: 100vw;
     height: 100vh;
     position: relative;
-    transition: all 1s linear 1s;
 }
 
 /* gate mechanism */
@@ -34,6 +33,10 @@ body{
     height: 10%;
     width: 100%;
     background-color: var(--clr-mechanism-primary);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .gate-top-mechanism{
     left: 0;
@@ -46,27 +49,44 @@ body{
     background-color: var(--clr-mechanism-secondary);
     outline: var(--outline-mechanism);
     outline-offset: -0.2rem;
+    transition: all 1s linear;
 }
 .mechanism-top{
     top: 0;
+    transform: translate(0);
 }
 .mechanism-middle{
     position: absolute;
-    top: 30%;
-    height: 40%;
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    top: 30%;
+    height: 40%;
+    width: 99%;
+    outline: var(--outline-mechanism);
+    border-radius: 20px;
 }
 .mechanism-wheel{
     height: 100%;
     background-color: var(--clr-mechanism-wheels);
-    border-radius: 100%
+    background: url("./images/wooden-wheel.png") center/cover no-repeat;
+    border-radius: 100%;
+    transform: rotate(0deg);
+    transition: all linear 1s;
+}
+.mechanism-wheel-rotate{
+    transform: rotate(360deg) !important;
 }
 .mechanism-bottom{
     top: 70%;
+    transform: translate(0);
+}
+.mechanism-translate-left {
+    transform: translate(-100%);
 }
 
+.mechanism-translate-right {
+    transform: translate(100%);
+}
 .gate-bottom-mechanism{
     left: 0;
     top: 90%;
@@ -87,18 +107,15 @@ body{
     background-color: var(--clr-gate-wings);
     outline: var(--outline-gate--wings);
     outline-offset: -1rem;
+    transition: all 1s linear 1s;
 }
 .left-wing{
     left: 0;
     transform: translateX(0);
-    transition-duration: 1s;
-    transition-delay: 1s;
 }
 .right-wing{
     left: 50%;
     transform: translateX(0);
-    transition-duration: 1s;
-    transition-delay: 1s;
 }
 .left-wing-open{
     transform: translateX(-90%);
