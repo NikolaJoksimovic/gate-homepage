@@ -1,0 +1,2 @@
+- No frameworks involved.
+- I want to create a responsive homepage where you have a closed gate in the begining. After clicking it or touching it the gate opens and welcomes you on the page.

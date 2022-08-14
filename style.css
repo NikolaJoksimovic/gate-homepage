@@ -1,0 +1,103 @@
+:root{
+    --clr-white: white;
+    --clr-black: black;
+
+    --clr-mechanism-primary: rgb(87, 43, 43);
+    --clr-mechanism-secondary:rgb(100, 70, 59);
+    --clr-mechanism-wheels: black;
+    --outline-mechanism: 0.2rem solid black;
+
+    --clr-gate-wings: rgb(29, 12, 11);
+    --outline-gate--wings: 1rem solid black;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: antiquewhite;
+}
+
+/* gate container */
+.gate-container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* gate mechanism */
+.gate-top-mechanism, .gate-bottom-mechanism{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    background-color: var(--clr-mechanism-primary);
+}
+.gate-top-mechanism{
+    left: 0;
+    top: 0;
+}
+.mechanism-top, .mechanism-bottom{
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background-color: var(--clr-mechanism-secondary);
+    outline: var(--outline-mechanism);
+    outline-offset: -0.2rem;
+}
+.mechanism-top{
+    top: 0;
+}
+.mechanism-middle{
+    position: absolute;
+    top: 30%;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.mechanism-wheel{
+    height: 100%;
+    background-color: var(--clr-mechanism-wheels);
+    border-radius: 100%
+}
+.mechanism-bottom{
+    top: 70%;
+}
+
+.gate-bottom-mechanism{
+    left: 0;
+    top: 90%;
+}
+/* gate wings */
+.gate-wings{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 80%;
+}
+.left-wing, .right-wing{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--clr-gate-wings);
+    outline: var(--outline-gate--wings);
+    outline-offset: -1rem;
+}
+.left-wing{
+    left: 0;
+}
+.right-wing{
+    left: 50%;
+}
+.left-wing-open{
+    transform: translateX(-100%);
+    transition-duration: 1s;
+    transition-delay: 1s;
+}
+.right-wing-open{
+    transform: translateX(100%);
+    transition-duration: 1s;
+    transition-delay: 1s;
+}
